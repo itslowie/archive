@@ -1,0 +1,121 @@
+.janela-categoria {
+    position: fixed;
+    width: min(760px, 82vw);
+    height: min(58vh, 520px);
+    min-height: min(350px, calc(100vh - 48px));
+    max-height: calc(100vh - 48px);
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    border: 3px solid #29b957;
+    border-radius: 12px 12px 9px 9px;
+    background: #eef1ed;
+    color: #303833;
+    box-shadow: 0 7px 0 #12652c, 0 22px 48px rgb(0 0 0 / 38%);
+    transform-origin: center;
+}
+
+.janela-categoria[open] {
+    display: flex;
+    flex-direction: column;
+    animation: abrir-popup 340ms cubic-bezier(0.2, 0.85, 0.25, 1.08) both;
+}
+
+.janela-categoria::backdrop {
+    background: transparent;
+}
+
+.janela-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 62px;
+    padding: 10px 14px 10px 22px;
+    border-bottom: 3px solid #29b957;
+    background: linear-gradient(180deg, #454c47, #303631);
+    color: #29b957;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+}
+
+.janela-cabecalho:active {
+    cursor: grabbing;
+}
+
+.janela-cabecalho h2 {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.fechar-janela {
+    border: 0;
+    padding: 0 4px;
+    background: transparent;
+    color: inherit;
+    font: 400 30px/1 'Chakra Petch', sans-serif;
+    cursor: pointer;
+    touch-action: manipulation;
+    box-shadow: none;
+}
+
+.fechar-janela:hover {
+    color: #8ce2a5;
+}
+
+.fechar-janela:focus-visible {
+    outline: 1px solid #8ce2a5;
+    outline-offset: 3px;
+}
+
+.janela-corpo {
+    display: block;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    border: 0;
+    background: #f7f8f6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .janela-categoria[open] {
+        animation: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .janela-categoria {
+        width: calc(100vw - 40px);
+        height: min(66vh, 520px);
+        min-height: min(340px, calc(100vh - 32px));
+        max-height: calc(100vh - 32px);
+    }
+
+    .janela-cabecalho {
+        flex-basis: 56px;
+        padding-left: 14px;
+    }
+
+    .janela-cabecalho h2 {
+        font-size: 19px;
+    }
+}
+
+@keyframes abrir-popup {
+    0% {
+        opacity: 0;
+        transform: scale(0.62) translateY(22px);
+    }
+
+    78% {
+        opacity: 1;
+        transform: scale(1.015) translateY(-2px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

@@ -1,0 +1,28 @@
+/* ==============================
+   CONFIGURACOES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #1c1f1e;
+    --verde: #29b957;
+    --texto: #c9e0d0;
+    --preto: #1c1f1e;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
