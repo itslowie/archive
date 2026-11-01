@@ -3,7 +3,7 @@
 }
 
 html {
-    background: #f7f8f6;
+    background: #303833;
 }
 
 body {
@@ -13,6 +13,10 @@ body {
     background: #303833;
     color: #f7f8f6;
     font-family: 'Chakra Petch', sans-serif;
+}
+
+body.pagina-interesses {
+    min-height: 0;
 }
 
 main {
@@ -200,18 +204,11 @@ blockquote {
 }
 
 .topico-conteudo {
-    max-height: 180px;
-    overflow-y: auto;
+    max-height: none;
+    overflow: visible;
     padding: 12px 18px 16px;
     background: #1e2421;
     color: #f7f8f6;
-    overscroll-behavior: contain;
-    scrollbar-color: #29b957 #303833;
-}
-
-.topico-conteudo-jogos {
-    max-height: none;
-    overflow: visible;
 }
 
 .topico-conteudo p {
@@ -221,6 +218,32 @@ blockquote {
 
 .topico-conteudo p:last-child {
     margin-bottom: 0;
+}
+
+.hobby-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 16px;
+    padding: 8px 16px;
+    border: 1px solid #29b957;
+    border-radius: 20px;
+    background: #303833;
+    color: #a9d8b5;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 180ms ease, color 180ms ease;
+}
+
+.hobby-link:hover,
+.hobby-link:focus-visible {
+    background: #29b957;
+    color: #1e2421;
+}
+
+.hobby-link:focus-visible {
+    outline: 2px solid #8ce2a5;
+    outline-offset: 3px;
 }
 
 .jogos-titulo {

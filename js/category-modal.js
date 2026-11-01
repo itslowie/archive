@@ -4,6 +4,7 @@ const corpoJanela = document.querySelector('#corpo-janela');
 const fecharJanela = document.querySelector('.fechar-janela');
 const cabecalhoJanela = document.querySelector('.janela-cabecalho');
 let arrastoJanela = null;
+let observadorConteudo = null;
 
 document.querySelectorAll('.categoria[data-modal]').forEach((categoria) => {
     categoria.addEventListener('click', () => {
@@ -12,6 +13,31 @@ document.querySelectorAll('.categoria[data-modal]').forEach((categoria) => {
         corpoJanela.src = categoria.dataset.modal;
         janelaCategoria.showModal();
     });
+});
+
+corpoJanela.addEventListener('load', () => {
+    if (observadorConteudo) {
+        observadorConteudo.disconnect();
+        observadorConteudo = null;
+    }
+
+    corpoJanela.style.height = '';
+    const documento = corpoJanela.contentDocument;
+    if (!documento || !documento.body.classList.contains('pagina-interesses')) {
+        corpoJanela.removeAttribute('scrolling');
+        return;
+    }
+
+    corpoJanela.setAttribute('scrolling', 'no');
+
+    const conteudoInteresses = documento.querySelector('.interesses');
+    const ajustarAltura = () => {
+        corpoJanela.style.height = `${documento.documentElement.scrollHeight}px`;
+    };
+
+    ajustarAltura();
+    observadorConteudo = new ResizeObserver(ajustarAltura);
+    observadorConteudo.observe(conteudoInteresses);
 });
 
 fecharJanela.addEventListener('click', () => {
