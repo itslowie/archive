@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Low.ie - Meu Cantinho</title>
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Cabeçalho e Banner -->
+        <header class="cabecalho">
+
+            <div class="banner">
+
+                <!-- Navegação -->
+                <nav class="navegacao">
+                    <a href="index.html" aria-current="page">Home</a>
+                    <a href="escritas.html">Escritas</a>
+                    <a href="artes.html">Artes</a>
+                    <a href="galeria.html">Galeria</a>
+                </nav>
+
+                <!-- Identidade -->
+                <div class="logo">
+                    <span>Low.ie</span>
+                    <span class="detalhe-logo">ˎˊ-</span>
+                </div>
+
+                <!-- Título -->
+                <h1 class="titulo-banner">Bem Vindo!!</h1>
+
+            </div>
+
+        </header>
+
+        <!-- Apresentação -->
+        <section class="apresentacao">
+
+            <p>
+                Isso aqui é uma espécie de gaveta aberta da minha cabeça.
+                Um lugar para experimentar, registrar momentos e deixar
+                algumas partes de mim espalhadas pela internet.
+            </p>
+
+            <p class="convite">
+                Não existe muita ordem ou propósito, mas sinta-se à
+                vontade para explorar!
+            </p>
+
+        </section>
+
+        <!-- Divisor decorativo -->
+        <div class="divisor">
+
+            <div class="linha"></div>
+
+            <div class="pontos">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Nova seção -->
+    <section class="secao-conteudo revelar">
+
+        <div class="secao-titulo">
+            <span class="numero">.✦── </span>
+            <h2>Um pouco sobre mim...</h2>
+        </div>
+
+        <p class="descricao-secao">
+            Por trás de todas essas ideias, existe alguém. Prazer, sou eu!
+        </p>
+
+        <div class="conteudo-categorias">
+
+            <button type="button" class="categoria" data-modal="modais/principal.html">
+                <span>01</span>
+                <h3>Principal</h3>
+                <p>As informações mais básicas sobre mim.</p>
+                <span class="seta">↗</span>
+            </button>
+
+            <button type="button" class="categoria" data-modal="modais/interesses.html">
+                <span>02</span>
+                <h3>Interesses</h3>
+                <p>Coisas que me fazem aguentar essa vida. </p>
+                <span class="seta">↗</span>
+            </button>
+
+            <button type="button" class="categoria" data-modal="modais/hobbies.html">
+                <span>03</span>
+                <h3>Hobbies</h3>
+                <p>Atividades que eu faço!</p>
+                <span class="seta">↗</span>
+            </button>
+
+        </div>
+
+    </section>
+
+    <dialog class="janela-categoria" id="janela-categoria" aria-labelledby="titulo-janela">
+        <div class="janela-cabecalho">
+            <h2 id="titulo-janela">Categoria</h2>
+            <button type="button" class="fechar-janela" aria-label="Fechar janela">×</button>
+        </div>
+        <iframe class="janela-corpo" id="corpo-janela" title="Conteúdo da categoria" src="about:blank"></iframe>
+    </dialog>
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
