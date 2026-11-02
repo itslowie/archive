@@ -277,6 +277,22 @@ blockquote {
     outline-offset: 3px;
 }
 
+.jogo-imagem {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.jogo-imagem-ao3 {
+    object-position: center top;
+}
+
+.jogo-imagem-arg {
+    object-position: center top;
+}
+
 .jogo-arte {
     position: absolute;
     z-index: -1;
